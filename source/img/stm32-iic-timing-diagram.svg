@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">IIC Timing Diagram</title>
+  <desc id="desc">Simplified IIC timing diagram showing start, address, ACK, data, ACK and stop.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f8fbff; stroke: #c7d7e8; stroke-width: 2; rx: 18; }
+      .title { font: 700 34px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #334a62; }
+      .label { font: 700 28px 'Consolas', 'Microsoft YaHei', monospace; fill: #3d5875; }
+      .note { font: 500 21px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #5b7088; }
+      .small { font: 500 18px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #6b8198; }
+      .line { fill: none; stroke: #587a9f; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .clock { fill: none; stroke: #4f6f91; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .accent { stroke: #d18c00; stroke-width: 3; stroke-dasharray: 8 7; }
+      .marker { fill: #d18c00; }
+      .grid { stroke: #dfe9f3; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="520"/>
+  <rect class="panel" x="20" y="20" width="1160" height="480" rx="18"/>
+
+  <text class="title" x="60" y="75">IIC / I2C 简化时序图</text>
+  <text class="note" x="60" y="112">START -> 7位地址 + R/W -> ACK -> 8位数据 -> ACK/NACK -> STOP</text>
+
+  <line class="grid" x1="140" y1="150" x2="1070" y2="150"/>
+  <line class="grid" x1="140" y1="270" x2="1070" y2="270"/>
+
+  <text class="label" x="70" y="165">SCL</text>
+  <text class="label" x="70" y="285">SDA</text>
+
+  <path class="clock" d="M160 190 L220 190 L220 145 L280 145 L280 190 L340 190 L340 145 L400 145 L400 190 L460 190 L460 145 L520 145 L520 190 L580 190 L580 145 L640 145 L640 190 L700 190 L700 145 L760 145 L760 190 L820 190 L820 145 L880 145 L880 190 L940 190 L940 145 L1000 145 L1000 190 L1060 190"/>
+
+  <path class="line" d="M160 250 L190 250 L190 320 L460 320 L460 250 L520 250 L520 320 L820 320 L820 250 L880 250 L880 320 L1000 320 L1000 250 L1060 250"/>
+
+  <line class="accent" x1="190" y1="120" x2="190" y2="355"/>
+  <line class="accent" x1="1000" y1="120" x2="1000" y2="355"/>
+  <polygon class="marker" points="190,120 184,132 196,132"/>
+  <polygon class="marker" points="1000,120 994,132 1006,132"/>
+
+  <text class="note" x="158" y="390">START</text>
+  <text class="note" x="963" y="390">STOP</text>
+
+  <text class="small" x="255" y="355">7位地址 + R/W</text>
+  <text class="small" x="533" y="355">ACK</text>
+  <text class="small" x="645" y="355">8位数据</text>
+  <text class="small" x="835" y="355">ACK/NACK</text>
+
+  <text class="small" x="150" y="450">规则 1：SCL 为高时，SDA 从高到低，表示开始条件</text>
+  <text class="small" x="150" y="480">规则 2：SCL 为高时，SDA 从低到高，表示停止条件；正常数据阶段跟着时钟节奏采样</text>
+</svg>

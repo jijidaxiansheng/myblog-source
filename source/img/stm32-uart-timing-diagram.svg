@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">UART Timing Diagram</title>
+  <desc id="desc">Simplified UART timing diagram showing idle, start bit, 8 data bits and stop bit.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f8fbff; stroke: #c7d7e8; stroke-width: 2; rx: 18; }
+      .title { font: 700 34px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #334a62; }
+      .label { font: 700 28px 'Consolas', 'Microsoft YaHei', monospace; fill: #3d5875; }
+      .note { font: 500 21px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #5b7088; }
+      .small { font: 500 18px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #6b8198; }
+      .wave { fill: none; stroke: #587a9f; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .grid { stroke: #dfe9f3; stroke-width: 2; }
+      .mark { stroke: #d18c00; stroke-width: 2.5; stroke-dasharray: 7 7; }
+      .accent { fill: #d18c00; }
+      .frame { fill: #eef5fc; stroke: #c7d7e8; stroke-width: 1.5; rx: 10; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="540"/>
+  <rect class="panel" x="20" y="20" width="1160" height="500" rx="18"/>
+
+  <text class="title" x="60" y="75">UART 简化时序图</text>
+  <text class="note" x="60" y="112">空闲高电平 -> 起始位 -> 8位数据位（低位先发）-> 停止位</text>
+
+  <line class="grid" x1="160" y1="180" x2="1090" y2="180"/>
+  <line class="grid" x1="160" y1="300" x2="1090" y2="300"/>
+  <text class="label" x="80" y="195">TXD</text>
+
+  <path class="wave" d="M180 180 L240 180 L240 300 L320 300 L320 180 L400 180 L400 300 L480 300 L480 180 L560 180 L560 180 L640 180 L640 300 L720 300 L720 180 L800 180 L800 300 L880 300 L880 180 L960 180 L960 180 L1040 180"/>
+
+  <line class="mark" x1="240" y1="135" x2="240" y2="340"/>
+  <polygon class="accent" points="240,135 234,147 246,147"/>
+
+  <rect class="frame" x="240" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="320" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="400" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="480" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="560" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="640" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="720" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="800" y="345" width="80" height="42" rx="10"/>
+  <rect class="frame" x="880" y="345" width="80" height="42" rx="10"/>
+
+  <text class="small" x="194" y="370">空闲</text>
+  <text class="small" x="255" y="372">起始位</text>
+  <text class="small" x="350" y="372">D0</text>
+  <text class="small" x="430" y="372">D1</text>
+  <text class="small" x="510" y="372">D2</text>
+  <text class="small" x="590" y="372">D3</text>
+  <text class="small" x="670" y="372">D4</text>
+  <text class="small" x="750" y="372">D5</text>
+  <text class="small" x="830" y="372">D6</text>
+  <text class="small" x="910" y="372">D7</text>
+  <text class="small" x="985" y="372">停止位</text>
+
+  <text class="small" x="180" y="435">说明 1：UART 没有独立时钟线，所以接收端要通过起始位确定采样时刻</text>
+  <text class="small" x="180" y="465">说明 2：最常见格式是 1 位起始位 + 8 位数据位 + 1 位停止位，可选奇偶校验位</text>
+  <text class="small" x="180" y="495">说明 3：线路空闲时保持高电平，数据位通常低位先发</text>
+</svg>

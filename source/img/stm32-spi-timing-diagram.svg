@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">SPI Timing Diagram</title>
+  <desc id="desc">Simplified SPI timing diagram showing CS, SCLK, MOSI and MISO.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f8fbff; stroke: #c7d7e8; stroke-width: 2; rx: 18; }
+      .title { font: 700 34px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #334a62; }
+      .label { font: 700 28px 'Consolas', 'Microsoft YaHei', monospace; fill: #3d5875; }
+      .note { font: 500 21px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #5b7088; }
+      .small { font: 500 18px 'Microsoft YaHei', 'PingFang SC', sans-serif; fill: #6b8198; }
+      .cs { fill: none; stroke: #587a9f; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .clock { fill: none; stroke: #4f6f91; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .mosi { fill: none; stroke: #d18c00; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .miso { fill: none; stroke: #6f8fb2; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .grid { stroke: #dfe9f3; stroke-width: 2; }
+      .chip { fill: #eef5fc; stroke: #c7d7e8; stroke-width: 2; rx: 12; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="560"/>
+  <rect class="panel" x="20" y="20" width="1160" height="520" rx="18"/>
+
+  <text class="title" x="60" y="75">SPI 简化时序图</text>
+  <text class="note" x="60" y="112">CS 拉低后开始通信，主从设备跟着 SCLK 同步移位，MOSI 和 MISO 可同时传输</text>
+
+  <line class="grid" x1="150" y1="150" x2="1080" y2="150"/>
+  <line class="grid" x1="150" y1="240" x2="1080" y2="240"/>
+  <line class="grid" x1="150" y1="330" x2="1080" y2="330"/>
+  <line class="grid" x1="150" y1="420" x2="1080" y2="420"/>
+
+  <text class="label" x="70" y="165">CS</text>
+  <text class="label" x="50" y="255">SCLK</text>
+  <text class="label" x="50" y="345">MOSI</text>
+  <text class="label" x="50" y="435">MISO</text>
+
+  <path class="cs" d="M170 130 L240 130 L240 180 L980 180 L980 130 L1060 130"/>
+  <path class="clock" d="M240 270 L285 270 L285 220 L330 220 L330 270 L375 270 L375 220 L420 220 L420 270 L465 270 L465 220 L510 220 L510 270 L555 270 L555 220 L600 220 L600 270 L645 270 L645 220 L690 220 L690 270 L735 270 L735 220 L780 220 L780 270 L825 270 L825 220 L870 220 L870 270 L915 270 L915 220 L960 220 L960 270"/>
+
+  <path class="mosi" d="M240 350 L330 350 L330 310 L420 310 L420 350 L510 350 L510 310 L600 310 L600 350 L690 350 L690 310 L780 310 L780 350 L870 350 L870 310 L960 310 L960 350"/>
+  <path class="miso" d="M240 400 L285 400 L285 440 L375 440 L375 400 L465 400 L465 440 L555 440 L555 400 L645 400 L645 440 L735 440 L735 400 L825 400 L825 440 L915 440 L915 400 L960 400"/>
+
+  <text class="small" x="262" y="205">选中从设备</text>
+  <text class="small" x="970" y="205">结束</text>
+
+  <text class="small" x="265" y="305">b7</text>
+  <text class="small" x="355" y="305">b6</text>
+  <text class="small" x="445" y="305">b5</text>
+  <text class="small" x="535" y="305">b4</text>
+  <text class="small" x="625" y="305">b3</text>
+  <text class="small" x="715" y="305">b2</text>
+  <text class="small" x="805" y="305">b1</text>
+  <text class="small" x="895" y="305">b0</text>
+
+  <text class="small" x="265" y="475">r7</text>
+  <text class="small" x="355" y="475">r6</text>
+  <text class="small" x="445" y="475">r5</text>
+  <text class="small" x="535" y="475">r4</text>
+  <text class="small" x="625" y="475">r3</text>
+  <text class="small" x="715" y="475">r2</text>
+  <text class="small" x="805" y="475">r1</text>
+  <text class="small" x="895" y="475">r0</text>
+
+  <text class="small" x="150" y="515">说明：CS 是片选线；MOSI 是主机发给从机；MISO 是从机回给主机；每个时钟沿完成一次移位与采样</text>
+</svg>
